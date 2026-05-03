@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon id="repository.oneadvent" version="1.0.0" name="Oneadvent Repository"
+	provider-name="Oneadvent">
+	<extension point="xbmc.addon.repository" name="Oneadvent Repository">
+		<info compressed="false">https://YOUR_GITHUB_USERNAME.github.io/oneadventskin/addons.xml</info>
+		<checksum>https://YOUR_GITHUB_USERNAME.github.io/oneadventskin/addons.xml.md5</checksum>
+		<datadir zip="true">https://YOUR_GITHUB_USERNAME.github.io/oneadventskin/zips/</datadir>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en_GB">Oneadvent Kodi repository</summary>
+		<summary lang="en_US">Oneadvent Kodi repository</summary>
+		<summary lang="en_NZ">Oneadvent Kodi repository</summary>
+		<description lang="en_GB">Repository for Fentastic Oneadvent Skin.</description>
+		<description lang="en_US">Repository for Fentastic Oneadvent Skin.</description>
+		<description lang="en_NZ">Repository for Fentastic Oneadvent Skin.</description>
+		<platform>all</platform>
+		<assets>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
+		</assets>
+	</extension>
+</addon>

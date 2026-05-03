@@ -1,0 +1,6 @@
+[v1.0.1]
+- Initial public release of Fentastic Oneadvent Skin.
+- Unique add-on ID to avoid conflicts with the original FENtastic skin.
+- Simplified home menu for Movies, TV Shows, Add-ons, and Favorites.
+- FenLight/FenLightAM search and direct section routing.
+- Oneadvent branding and green home background.
