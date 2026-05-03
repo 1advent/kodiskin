@@ -101,11 +101,18 @@ def write_site_index() -> None:
     <h1>Fentastic Oneadvent Skin</h1>
     <p>Custom Kodi skin build based on FENtastic by Ivar Brandt.</p>
 
+    <h2>Prerequisite</h2>
+    <p>This skin requires script.fentastic.helper from Ivar Brandt's repository.</p>
+    <p>Install source: <a href="https://ivarbrandt.github.io/repository.ivarbrandt/">https://ivarbrandt.github.io/repository.ivarbrandt/</a></p>
+
     <h2>Install in Kodi</h2>
     <ol>
+        <li>Add Ivar Brandt's source in Kodi File Manager</li>
+        <li>Install Ivar Brandt's repository zip</li>
         <li>Add this source in Kodi File Manager: {PAGES_BASE}/</li>
         <li>Open Install from zip file</li>
         <li>Select {REPO_ADDON_ID}-{REPO_VERSION}.zip</li>
+        <li>Open Oneadvent Repository, then Look and feel, then Skin</li>
     </ol>
 
     <h2>Files</h2>
