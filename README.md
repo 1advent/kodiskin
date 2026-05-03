@@ -12,7 +12,7 @@ Steps:
 
 1. In Kodi, open **Settings → File Manager → Add source**
 2. Add `https://1advent.github.io/kodiskin/`
-3. Install `repository.oneadvent-1.0.0.zip`
+3. Install `repository.oneadvent-1.0.1.zip`
 4. Go to **Install from repository → Oneadvent Repository → Look and feel → Skin**
 5. Install **Fentastic Oneadvent Skin**
 
@@ -20,7 +20,7 @@ The required helper add-on, `script.fentastic.helper`, is bundled in this reposi
 
 Direct repository zip:
 
-`https://1advent.github.io/kodiskin/zips/repository.oneadvent/repository.oneadvent-1.0.0.zip`
+`https://1advent.github.io/kodiskin/zips/repository.oneadvent/repository.oneadvent-1.0.1.zip`
 
 ## Credits
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
-  <addon id="repository.oneadvent" version="1.0.0" name="Oneadvent Repository"
+  <addon id="repository.oneadvent" version="1.0.1" name="Oneadvent Repository"
   	provider-name="Oneadvent">
   	<extension point="xbmc.addon.repository" name="Oneadvent Repository">
           <dir>
