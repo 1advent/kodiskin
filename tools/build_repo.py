@@ -73,6 +73,24 @@ def zip_addon(addon_dir: Path, addon_id: str, version: str) -> Path:
     return out_zip
 
 
+def copy_addon_assets(addon_dir: Path, addon_id: str) -> None:
+    out_dir = ZIPS_DIR / addon_id
+    addon_xml = ET.parse(addon_dir / "addon.xml").getroot()
+    assets = addon_xml.find("./extension[@point='xbmc.addon.metadata']/assets")
+    if assets is None:
+        return
+    for node in assets:
+        if not node.text:
+            continue
+        rel = Path(node.text.strip())
+        src = addon_dir / rel
+        if not src.exists() or src.is_dir():
+            continue
+        dst = out_dir / rel
+        dst.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(src, dst)
+
+
 def read_addon_xml_without_declaration(path: Path) -> str:
     text = path.read_text(encoding="utf-8")
     lines = text.splitlines()
@@ -148,8 +166,11 @@ def main() -> None:
 
     write_repository_addon_xml()
     helper_zip_path = zip_addon(HELPER_DIR, HELPER_ADDON_ID, HELPER_VERSION)
-    zip_addon(SKIN_DIR, SKIN_ADDON_ID, SKIN_VERSION)
+    skin_zip_path = zip_addon(SKIN_DIR, SKIN_ADDON_ID, SKIN_VERSION)
     repo_zip_path = zip_addon(REPO_DIR, REPO_ADDON_ID, REPO_VERSION)
+    copy_addon_assets(HELPER_DIR, HELPER_ADDON_ID)
+    copy_addon_assets(SKIN_DIR, SKIN_ADDON_ID)
+    copy_addon_assets(REPO_DIR, REPO_ADDON_ID)
     shutil.copy2(helper_zip_path, DOCS_DIR / helper_zip_path.name)
     shutil.copy2(repo_zip_path, DOCS_DIR / repo_zip_path.name)
     build_addons_xml()
