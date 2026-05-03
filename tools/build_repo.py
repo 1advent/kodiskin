@@ -4,20 +4,24 @@ from hashlib import md5
 from pathlib import Path
 import shutil
 import zipfile
+import xml.etree.ElementTree as ET
 
 GITHUB_USERNAME = "1advent"
 REPO_NAME = "kodiskin"
+HELPER_ADDON_ID = "script.fentastic.helper"
 SKIN_ADDON_ID = "skin.fentastic.oneadvent"
-SKIN_VERSION = "1.0.1"
 REPO_ADDON_ID = "repository.oneadvent"
 REPO_VERSION = "1.0.0"
 PAGES_BASE = f"https://{GITHUB_USERNAME}.github.io/{REPO_NAME}"
 
 ROOT = Path(__file__).resolve().parent.parent
+HELPER_DIR = ROOT / HELPER_ADDON_ID
 SKIN_DIR = ROOT / "src"
 REPO_DIR = ROOT / REPO_ADDON_ID
 DOCS_DIR = ROOT / "docs"
 ZIPS_DIR = DOCS_DIR / "zips"
+HELPER_VERSION = ET.parse(HELPER_DIR / "addon.xml").getroot().attrib["version"]
+SKIN_VERSION = ET.parse(SKIN_DIR / "addon.xml").getroot().attrib["version"]
 
 
 def write_repository_addon_xml() -> None:
@@ -77,7 +81,7 @@ def read_addon_xml_without_declaration(path: Path) -> str:
 
 def build_addons_xml() -> None:
     body = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<addons>\n"
-    for addon_xml in [REPO_DIR / "addon.xml", SKIN_DIR / "addon.xml"]:
+    for addon_xml in [REPO_DIR / "addon.xml", HELPER_DIR / "addon.xml", SKIN_DIR / "addon.xml"]:
         addon_text = read_addon_xml_without_declaration(addon_xml)
         indented = "\n".join(("  " + line) if line else "" for line in addon_text.splitlines())
         body += indented + "\n"
@@ -89,6 +93,7 @@ def build_addons_xml() -> None:
 
 def write_site_index() -> None:
     repo_zip = f"{REPO_ADDON_ID}-{REPO_VERSION}.zip"
+    helper_zip = f"{HELPER_ADDON_ID}-{HELPER_VERSION}.zip"
     skin_zip = f"zips/{SKIN_ADDON_ID}/{SKIN_ADDON_ID}-{SKIN_VERSION}.zip"
     content = f'''<!DOCTYPE html>
 <html lang="en">
@@ -101,23 +106,21 @@ def write_site_index() -> None:
     <h1>Fentastic Oneadvent Skin</h1>
     <p>Custom Kodi skin build based on FENtastic by Ivar Brandt.</p>
 
-    <h2>Prerequisite</h2>
-    <p>This skin requires script.fentastic.helper from Ivar Brandt's repository.</p>
-    <p>Install source: <a href="https://ivarbrandt.github.io/repository.ivarbrandt/">https://ivarbrandt.github.io/repository.ivarbrandt/</a></p>
-
     <h2>Install in Kodi</h2>
     <ol>
-        <li>Add Ivar Brandt's source in Kodi File Manager</li>
-        <li>Install Ivar Brandt's repository zip</li>
         <li>Add this source in Kodi File Manager: {PAGES_BASE}/</li>
         <li>Open Install from zip file</li>
         <li>Select {REPO_ADDON_ID}-{REPO_VERSION}.zip</li>
         <li>Open Oneadvent Repository, then Look and feel, then Skin</li>
+        <li>Install Fentastic Oneadvent Skin</li>
     </ol>
+
+    <p>The helper add-on required by the skin is bundled in this repository.</p>
 
     <h2>Files</h2>
     <ul>
         <li><a href="{repo_zip}">{REPO_ADDON_ID}-{REPO_VERSION}.zip</a></li>
+        <li><a href="{helper_zip}">{HELPER_ADDON_ID}-{HELPER_VERSION}.zip</a></li>
         <li><a href="{skin_zip}">{SKIN_ADDON_ID}-{SKIN_VERSION}.zip</a></li>
         <li><a href="addons.xml">addons.xml</a></li>
         <li><a href="addons.xml.md5">addons.xml.md5</a></li>
@@ -142,8 +145,10 @@ def main() -> None:
     ZIPS_DIR.mkdir(parents=True, exist_ok=True)
 
     write_repository_addon_xml()
+    helper_zip_path = zip_addon(HELPER_DIR, HELPER_ADDON_ID, HELPER_VERSION)
     zip_addon(SKIN_DIR, SKIN_ADDON_ID, SKIN_VERSION)
     repo_zip_path = zip_addon(REPO_DIR, REPO_ADDON_ID, REPO_VERSION)
+    shutil.copy2(helper_zip_path, DOCS_DIR / helper_zip_path.name)
     shutil.copy2(repo_zip_path, DOCS_DIR / repo_zip_path.name)
     build_addons_xml()
     write_site_index()

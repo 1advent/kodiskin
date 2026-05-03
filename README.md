@@ -4,14 +4,6 @@ Custom Kodi skin build based on **FENtastic**.
 
 ## Install in Kodi
 
-Prerequisite:
-
-This skin requires `script.fentastic.helper`, which comes from Ivar Brandt's repository.
-
-Install Ivar Brandt's repository first:
-
-`https://ivarbrandt.github.io/repository.ivarbrandt/`
-
 Repository URL:
 
 `https://1advent.github.io/kodiskin/`
@@ -19,12 +11,12 @@ Repository URL:
 Steps:
 
 1. In Kodi, open **Settings → File Manager → Add source**
-2. Add `https://ivarbrandt.github.io/repository.ivarbrandt/`
-3. Install Ivar Brandt's repository zip
-4. Add `https://1advent.github.io/kodiskin/`
-5. Install `repository.oneadvent-1.0.0.zip`
-6. Go to **Install from repository → Oneadvent Repository → Look and feel → Skin**
-7. Install **Fentastic Oneadvent Skin**
+2. Add `https://1advent.github.io/kodiskin/`
+3. Install `repository.oneadvent-1.0.0.zip`
+4. Go to **Install from repository → Oneadvent Repository → Look and feel → Skin**
+5. Install **Fentastic Oneadvent Skin**
+
+The required helper add-on, `script.fentastic.helper`, is bundled in this repository.
 
 Direct repository zip:
 
@@ -33,6 +25,8 @@ Direct repository zip:
 ## Credits
 
 This project is based on **FENtastic** by **Ivar Brandt**.
+
+It also bundles a modified copy of **script.fentastic.helper** by **Tikipeter** and **Ivar Brandt** so the repository can be installed without needing Ivar Brandt's separate repository.
 
 - GitHub: `https://github.com/ivarbrandt`
 - Original project: `https://github.com/ivarbrandt/skin.fentastic`
