@@ -29,9 +29,11 @@ def write_repository_addon_xml() -> None:
 <addon id="{REPO_ADDON_ID}" version="{REPO_VERSION}" name="Oneadvent Repository"
 	provider-name="Oneadvent">
 	<extension point="xbmc.addon.repository" name="Oneadvent Repository">
-		<info compressed="false">{PAGES_BASE}/addons.xml</info>
-		<checksum>{PAGES_BASE}/addons.xml.md5</checksum>
-		<datadir zip="true">{PAGES_BASE}/zips/</datadir>
+        <dir>
+            <info compressed="false">{PAGES_BASE}/addons.xml</info>
+            <checksum>{PAGES_BASE}/addons.xml.md5</checksum>
+            <datadir zip="true">{PAGES_BASE}/zips/</datadir>
+        </dir>
 	</extension>
 	<extension point="xbmc.addon.metadata">
 		<summary lang="en_GB">Oneadvent Kodi repository</summary>

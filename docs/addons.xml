@@ -3,9 +3,11 @@
   <addon id="repository.oneadvent" version="1.0.0" name="Oneadvent Repository"
   	provider-name="Oneadvent">
   	<extension point="xbmc.addon.repository" name="Oneadvent Repository">
-  		<info compressed="false">https://1advent.github.io/kodiskin/addons.xml</info>
-  		<checksum>https://1advent.github.io/kodiskin/addons.xml.md5</checksum>
-  		<datadir zip="true">https://1advent.github.io/kodiskin/zips/</datadir>
+          <dir>
+              <info compressed="false">https://1advent.github.io/kodiskin/addons.xml</info>
+              <checksum>https://1advent.github.io/kodiskin/addons.xml.md5</checksum>
+              <datadir zip="true">https://1advent.github.io/kodiskin/zips/</datadir>
+          </dir>
   	</extension>
   	<extension point="xbmc.addon.metadata">
   		<summary lang="en_GB">Oneadvent Kodi repository</summary>
