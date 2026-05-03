@@ -8,8 +8,6 @@ Repository URL:
 
 `https://1advent.github.io/kodiskin/`
 
-Steps:
-
 1. In Kodi, open **Settings → File Manager → Add source**
 2. Enter `https://1advent.github.io/kodiskin/`
 3. Give it a name such as **Oneadvent**
