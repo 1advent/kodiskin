@@ -11,7 +11,7 @@ REPO_NAME = "kodiskin"
 HELPER_ADDON_ID = "script.fentastic.helper"
 SKIN_ADDON_ID = "skin.fentastic.oneadvent"
 REPO_ADDON_ID = "repository.oneadvent"
-REPO_VERSION = "1.0.1"
+REPO_VERSION = "1.0.2"
 PAGES_BASE = f"https://{GITHUB_USERNAME}.github.io/{REPO_NAME}"
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -83,7 +83,7 @@ def read_addon_xml_without_declaration(path: Path) -> str:
 
 def build_addons_xml() -> None:
     body = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<addons>\n"
-    for addon_xml in [REPO_DIR / "addon.xml", HELPER_DIR / "addon.xml", SKIN_DIR / "addon.xml"]:
+    for addon_xml in [HELPER_DIR / "addon.xml", SKIN_DIR / "addon.xml"]:
         addon_text = read_addon_xml_without_declaration(addon_xml)
         indented = "\n".join(("  " + line) if line else "" for line in addon_text.splitlines())
         body += indented + "\n"

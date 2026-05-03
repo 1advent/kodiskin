@@ -16,6 +16,9 @@
             <icon>resources/media/icon.png</icon>
             <fanart>resources/media/fanart.jpg</fanart>
         </assets>
+        <summary lang="en_GB">FENtastic Helper for Kodi</summary>
+        <summary lang="en_NZ">FENtastic Helper for Kodi</summary>
+        <summary lang="en_US">FENtastic Helper for Kodi</summary>
         <description lang="en_GB">FENtastic Helper for FENtastic-based skins, bundled for Fentastic Oneadvent Skin and based on the original helper by Tikipeter and Ivar Brandt.</description>
         <description lang="en_NZ">FENtastic Helper for FENtastic-based skins, bundled for Fentastic Oneadvent Skin and based on the original helper by Tikipeter and Ivar Brandt.</description>
         <description lang="en_US">FENtastic Helper for FENtastic-based skins, bundled for Fentastic Oneadvent Skin and based on the original helper by Tikipeter and Ivar Brandt.</description>
