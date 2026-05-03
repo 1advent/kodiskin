@@ -103,9 +103,9 @@ def write_site_index() -> None:
 
     <h2>Install in Kodi</h2>
     <ol>
-        <li>Add this source in Kodi File Manager: <a href="{PAGES_BASE}/">{PAGES_BASE}/</a></li>
+        <li>Add this source in Kodi File Manager: {PAGES_BASE}/</li>
         <li>Open Install from zip file</li>
-        <li>Select <a href="{repo_zip}">{REPO_ADDON_ID}-{REPO_VERSION}.zip</a></li>
+        <li>Select {REPO_ADDON_ID}-{REPO_VERSION}.zip</li>
     </ol>
 
     <h2>Files</h2>
