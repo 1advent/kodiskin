@@ -46,6 +46,9 @@ def write_repository_addon_xml() -> None:
 		<assets>
 			<icon>icon.png</icon>
 			<fanart>fanart.jpg</fanart>
+            <screenshot>icon.png</screenshot>
+            <screenshot>icon.png</screenshot>
+            <screenshot>icon.png</screenshot>
 		</assets>
 	</extension>
 </addon>
