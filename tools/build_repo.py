@@ -87,6 +87,47 @@ def build_addons_xml() -> None:
     (DOCS_DIR / "addons.xml.md5").write_text(md5(body.encode("utf-8")).hexdigest(), encoding="utf-8")
 
 
+def write_site_index() -> None:
+    repo_zip = f"{REPO_ADDON_ID}-{REPO_VERSION}.zip"
+    skin_zip = f"zips/{SKIN_ADDON_ID}/{SKIN_ADDON_ID}-{SKIN_VERSION}.zip"
+    content = f'''<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fentastic Oneadvent Skin</title>
+</head>
+<body>
+    <h1>Fentastic Oneadvent Skin</h1>
+    <p>Custom Kodi skin build based on FENtastic by Ivar Brandt.</p>
+
+    <h2>Install in Kodi</h2>
+    <ol>
+        <li>Add this source in Kodi File Manager: <a href="{PAGES_BASE}/">{PAGES_BASE}/</a></li>
+        <li>Open Install from zip file</li>
+        <li>Select <a href="{repo_zip}">{REPO_ADDON_ID}-{REPO_VERSION}.zip</a></li>
+    </ol>
+
+    <h2>Files</h2>
+    <ul>
+        <li><a href="{repo_zip}">{REPO_ADDON_ID}-{REPO_VERSION}.zip</a></li>
+        <li><a href="{skin_zip}">{SKIN_ADDON_ID}-{SKIN_VERSION}.zip</a></li>
+        <li><a href="addons.xml">addons.xml</a></li>
+        <li><a href="addons.xml.md5">addons.xml.md5</a></li>
+    </ul>
+
+    <h2>Credits</h2>
+    <p>Based on <a href="https://github.com/ivarbrandt/skin.fentastic">FENtastic</a> by <a href="https://github.com/ivarbrandt">Ivar Brandt</a>.</p>
+
+    <h2>Source</h2>
+    <p><a href="https://github.com/{GITHUB_USERNAME}/{REPO_NAME}">https://github.com/{GITHUB_USERNAME}/{REPO_NAME}</a></p>
+</body>
+</html>
+'''
+    (DOCS_DIR / "index.html").write_text(content, encoding="utf-8")
+    (DOCS_DIR / ".nojekyll").write_text("", encoding="utf-8")
+
+
 def main() -> None:
     if ZIPS_DIR.exists():
         shutil.rmtree(ZIPS_DIR)
@@ -95,8 +136,10 @@ def main() -> None:
 
     write_repository_addon_xml()
     zip_addon(SKIN_DIR, SKIN_ADDON_ID, SKIN_VERSION)
-    zip_addon(REPO_DIR, REPO_ADDON_ID, REPO_VERSION)
+    repo_zip_path = zip_addon(REPO_DIR, REPO_ADDON_ID, REPO_VERSION)
+    shutil.copy2(repo_zip_path, DOCS_DIR / repo_zip_path.name)
     build_addons_xml()
+    write_site_index()
     print("Build complete")
 
 
