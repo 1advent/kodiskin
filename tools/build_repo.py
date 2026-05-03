@@ -164,6 +164,14 @@ def main() -> None:
     DOCS_DIR.mkdir(parents=True, exist_ok=True)
     ZIPS_DIR.mkdir(parents=True, exist_ok=True)
 
+    for pattern in (
+        f"{REPO_ADDON_ID}-*.zip",
+        f"{HELPER_ADDON_ID}-*.zip",
+        f"{SKIN_ADDON_ID}-*.zip",
+    ):
+        for path in DOCS_DIR.glob(pattern):
+            path.unlink()
+
     write_repository_addon_xml()
     helper_zip_path = zip_addon(HELPER_DIR, HELPER_ADDON_ID, HELPER_VERSION)
     skin_zip_path = zip_addon(SKIN_DIR, SKIN_ADDON_ID, SKIN_VERSION)

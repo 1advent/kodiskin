@@ -1,3 +1,8 @@
+[v1.0.2]
+- Updated packaged install assets and repository integration.
+- Refreshed install icon/logo assets.
+- Bundled repository/helper update path improvements.
+
 [v1.0.1]
 - Initial public release of Fentastic Oneadvent Skin.
 - Unique add-on ID to avoid conflicts with the original FENtastic skin.
