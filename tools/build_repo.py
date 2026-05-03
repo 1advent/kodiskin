@@ -45,7 +45,7 @@ def write_repository_addon_xml() -> None:
 		<platform>all</platform>
 		<assets>
 			<icon>icon.png</icon>
-			<fanart>fanart.jpg</fanart>
+            <fanart>fanart.png</fanart>
             <screenshot>icon.png</screenshot>
             <screenshot>icon.png</screenshot>
             <screenshot>icon.png</screenshot>

@@ -22,7 +22,7 @@
 		<source>https://github.com/1advent/kodiskin</source>
 		<assets>
 			<icon>resources/icon.png</icon>
-			<fanart>resources/fanart.jpg</fanart>
+			<fanart>resources/fanart.png</fanart>
 			<screenshot>resources/images/customizable_widgets.jpg</screenshot>
 			<screenshot>resources/images/infopanel.jpg</screenshot>
 			<screenshot>resources/images/viewtypes1.jpg</screenshot>
