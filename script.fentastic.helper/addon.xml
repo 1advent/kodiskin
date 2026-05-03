@@ -14,7 +14,7 @@
         <source>https://github.com/1advent/kodiskin</source>
         <assets>
             <icon>resources/media/icon.png</icon>
-            <fanart>resources/media/fanart.png</fanart>
+            <fanart>resources/media/fanart.jpg</fanart>
         </assets>
         <summary lang="en_GB">FENtastic Helper for Kodi</summary>
         <summary lang="en_NZ">FENtastic Helper for Kodi</summary>
