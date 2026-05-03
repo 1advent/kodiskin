@@ -11,7 +11,7 @@ REPO_NAME = "kodiskin"
 HELPER_ADDON_ID = "script.fentastic.helper"
 SKIN_ADDON_ID = "skin.fentastic.oneadvent"
 REPO_ADDON_ID = "repository.oneadvent"
-REPO_VERSION = "1.0.4"
+REPO_VERSION = "1.0.5"
 PAGES_BASE = f"https://{GITHUB_USERNAME}.github.io/{REPO_NAME}"
 
 ROOT = Path(__file__).resolve().parent.parent
