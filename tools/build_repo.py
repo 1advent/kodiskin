@@ -5,8 +5,8 @@ from pathlib import Path
 import shutil
 import zipfile
 
-GITHUB_USERNAME = "YOUR_GITHUB_USERNAME"
-REPO_NAME = "oneadventskin"
+GITHUB_USERNAME = "1advent"
+REPO_NAME = "kodiskin"
 SKIN_ADDON_ID = "skin.fentastic.oneadvent"
 SKIN_VERSION = "1.0.1"
 REPO_ADDON_ID = "repository.oneadvent"

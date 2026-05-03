@@ -5,7 +5,7 @@ A custom Kodi skin and repository hosted via **GitHub Pages**.
 ## Repository Structure
 
 ```
-oneadventskin/
+kodiskin/
 ├── src/                     ← Skin source code
 ├── repository.oneadvent/    ← Kodi repository addon metadata
 ├── docs/                    ← GitHub Pages root (this is your Kodi repo URL)
@@ -24,12 +24,12 @@ oneadventskin/
 In your GitHub repo settings → **Pages**:
 - Source: **Deploy from a branch**
 - Branch: `main`, folder `/docs`
-- Your Kodi repo URL will be: `https://YOUR_GITHUB_USERNAME.github.io/oneadventskin/`
+- Your Kodi repo URL will be: `https://1advent.github.io/kodiskin/`
 
 ## Installing in Kodi
 
 1. **Settings → File Manager → Add Source**
-2. URL: `https://YOUR_GITHUB_USERNAME.github.io/oneadventskin/`
+2. URL: `https://1advent.github.io/kodiskin/`
 3. Name it (e.g. `Oneadvent`)
 4. **Add-ons → Install from zip file** → select your source → install `repository.oneadvent-1.0.0.zip`
 5. Install the skin from within that repository
@@ -42,10 +42,9 @@ In your GitHub repo settings → **Pages**:
 4. Run: `python tools/build_repo.py`
 5. Commit and push — done
 
-## First-Time Setup
+## GitHub Repo
 
-Replace `YOUR_GITHUB_USERNAME` in:
-- `tools/build_repo.py` (line 8)
-- `src/addon.xml`
+- GitHub repository: `https://github.com/1advent/kodiskin`
+- GitHub Pages URL: `https://1advent.github.io/kodiskin/`
 
-Then run `python tools/build_repo.py` once before your first push.
+Run `python tools/build_repo.py` after any release change, then commit and push.
