@@ -203,102 +203,102 @@
 							<!-- SEARCH HISTORY -->
 							<item>
 								<label>$INFO[Skin.String(SearchHistory.1)]</label>
-								<onclick>RunScript(script.fentastic.helper,mode=re_search,query=$ESCINFO[Skin.String(SearchHistory.1)])</onclick>
+								<onclick>RunScript(script.fentastic.helper,mode=search_input,query=$ESCINFO[Skin.String(SearchHistory.1)])</onclick>
 								<visible>!String.IsEmpty(Skin.String(SearchHistory.1))</visible>
 							</item>
 							<item>
 								<label>$INFO[Skin.String(SearchHistory.2)]</label>
-								<onclick>RunScript(script.fentastic.helper,mode=re_search,query=$ESCINFO[Skin.String(SearchHistory.2)])</onclick>
+								<onclick>RunScript(script.fentastic.helper,mode=search_input,query=$ESCINFO[Skin.String(SearchHistory.2)])</onclick>
 								<visible>!String.IsEmpty(Skin.String(SearchHistory.2))</visible>
 							</item>
 							<item>
 								<label>$INFO[Skin.String(SearchHistory.3)]</label>
-								<onclick>RunScript(script.fentastic.helper,mode=re_search,query=$ESCINFO[Skin.String(SearchHistory.3)])</onclick>
+								<onclick>RunScript(script.fentastic.helper,mode=search_input,query=$ESCINFO[Skin.String(SearchHistory.3)])</onclick>
 								<visible>!String.IsEmpty(Skin.String(SearchHistory.3))</visible>
 							</item>
 							<item>
 								<label>$INFO[Skin.String(SearchHistory.4)]</label>
-								<onclick>RunScript(script.fentastic.helper,mode=re_search,query=$ESCINFO[Skin.String(SearchHistory.4)])</onclick>
+								<onclick>RunScript(script.fentastic.helper,mode=search_input,query=$ESCINFO[Skin.String(SearchHistory.4)])</onclick>
 								<visible>!String.IsEmpty(Skin.String(SearchHistory.4))</visible>
 							</item>
 							<item>
 								<label>$INFO[Skin.String(SearchHistory.5)]</label>
-								<onclick>RunScript(script.fentastic.helper,mode=re_search,query=$ESCINFO[Skin.String(SearchHistory.5)])</onclick>
+								<onclick>RunScript(script.fentastic.helper,mode=search_input,query=$ESCINFO[Skin.String(SearchHistory.5)])</onclick>
 								<visible>!String.IsEmpty(Skin.String(SearchHistory.5))</visible>
 							</item>
 							<item>
 								<label>$INFO[Skin.String(SearchHistory.6)]</label>
-								<onclick>RunScript(script.fentastic.helper,mode=re_search,query=$ESCINFO[Skin.String(SearchHistory.6)])</onclick>
+								<onclick>RunScript(script.fentastic.helper,mode=search_input,query=$ESCINFO[Skin.String(SearchHistory.6)])</onclick>
 								<visible>!String.IsEmpty(Skin.String(SearchHistory.6))</visible>
 							</item>
 							<item>
 								<label>$INFO[Skin.String(SearchHistory.7)]</label>
-								<onclick>RunScript(script.fentastic.helper,mode=re_search,query=$ESCINFO[Skin.String(SearchHistory.7)])</onclick>
+								<onclick>RunScript(script.fentastic.helper,mode=search_input,query=$ESCINFO[Skin.String(SearchHistory.7)])</onclick>
 								<visible>!String.IsEmpty(Skin.String(SearchHistory.7))</visible>
 							</item>
 							<item>
 								<label>$INFO[Skin.String(SearchHistory.8)]</label>
-								<onclick>RunScript(script.fentastic.helper,mode=re_search,query=$ESCINFO[Skin.String(SearchHistory.8)])</onclick>
+								<onclick>RunScript(script.fentastic.helper,mode=search_input,query=$ESCINFO[Skin.String(SearchHistory.8)])</onclick>
 								<visible>!String.IsEmpty(Skin.String(SearchHistory.8))</visible>
 							</item>
 							<item>
 								<label>$INFO[Skin.String(SearchHistory.9)]</label>
-								<onclick>RunScript(script.fentastic.helper,mode=re_search,query=$ESCINFO[Skin.String(SearchHistory.9)])</onclick>
+								<onclick>RunScript(script.fentastic.helper,mode=search_input,query=$ESCINFO[Skin.String(SearchHistory.9)])</onclick>
 								<visible>!String.IsEmpty(Skin.String(SearchHistory.9))</visible>
 							</item>
 							<item>
 								<label>$INFO[Skin.String(SearchHistory.10)]</label>
-								<onclick>RunScript(script.fentastic.helper,mode=re_search,query=$ESCINFO[Skin.String(SearchHistory.10)])</onclick>
+								<onclick>RunScript(script.fentastic.helper,mode=search_input,query=$ESCINFO[Skin.String(SearchHistory.10)])</onclick>
 								<visible>!String.IsEmpty(Skin.String(SearchHistory.10))</visible>
 							</item>
 							<item>
 								<label>$INFO[Skin.String(SearchHistory.11)]</label>
-								<onclick>RunScript(script.fentastic.helper,mode=re_search,query=$ESCINFO[Skin.String(SearchHistory.11)])</onclick>
+								<onclick>RunScript(script.fentastic.helper,mode=search_input,query=$ESCINFO[Skin.String(SearchHistory.11)])</onclick>
 								<visible>!String.IsEmpty(Skin.String(SearchHistory.11))</visible>
 							</item>
 							<item>
 								<label>$INFO[Skin.String(SearchHistory.12)]</label>
-								<onclick>RunScript(script.fentastic.helper,mode=re_search,query=$ESCINFO[Skin.String(SearchHistory.12)])</onclick>
+								<onclick>RunScript(script.fentastic.helper,mode=search_input,query=$ESCINFO[Skin.String(SearchHistory.12)])</onclick>
 								<visible>!String.IsEmpty(Skin.String(SearchHistory.12))</visible>
 							</item>
 							<item>
 								<label>$INFO[Skin.String(SearchHistory.13)]</label>
-								<onclick>RunScript(script.fentastic.helper,mode=re_search,query=$ESCINFO[Skin.String(SearchHistory.13)])</onclick>
+								<onclick>RunScript(script.fentastic.helper,mode=search_input,query=$ESCINFO[Skin.String(SearchHistory.13)])</onclick>
 								<visible>!String.IsEmpty(Skin.String(SearchHistory.13))</visible>
 							</item>
 							<item>
 								<label>$INFO[Skin.String(SearchHistory.14)]</label>
-								<onclick>RunScript(script.fentastic.helper,mode=re_search,query=$ESCINFO[Skin.String(SearchHistory.14)])</onclick>
+								<onclick>RunScript(script.fentastic.helper,mode=search_input,query=$ESCINFO[Skin.String(SearchHistory.14)])</onclick>
 								<visible>!String.IsEmpty(Skin.String(SearchHistory.14))</visible>
 							</item>
 							<item>
 								<label>$INFO[Skin.String(SearchHistory.15)]</label>
-								<onclick>RunScript(script.fentastic.helper,mode=re_search,query=$ESCINFO[Skin.String(SearchHistory.15)])</onclick>
+								<onclick>RunScript(script.fentastic.helper,mode=search_input,query=$ESCINFO[Skin.String(SearchHistory.15)])</onclick>
 								<visible>!String.IsEmpty(Skin.String(SearchHistory.15))</visible>
 							</item>
 							<item>
 								<label>$INFO[Skin.String(SearchHistory.16)]</label>
-								<onclick>RunScript(script.fentastic.helper,mode=re_search,query=$ESCINFO[Skin.String(SearchHistory.16)])</onclick>
+								<onclick>RunScript(script.fentastic.helper,mode=search_input,query=$ESCINFO[Skin.String(SearchHistory.16)])</onclick>
 								<visible>!String.IsEmpty(Skin.String(SearchHistory.16))</visible>
 							</item>
 							<item>
 								<label>$INFO[Skin.String(SearchHistory.17)]</label>
-								<onclick>RunScript(script.fentastic.helper,mode=re_search,query=$ESCINFO[Skin.String(SearchHistory.17)])</onclick>
+								<onclick>RunScript(script.fentastic.helper,mode=search_input,query=$ESCINFO[Skin.String(SearchHistory.17)])</onclick>
 								<visible>!String.IsEmpty(Skin.String(SearchHistory.17))</visible>
 							</item>
 							<item>
 								<label>$INFO[Skin.String(SearchHistory.18)]</label>
-								<onclick>RunScript(script.fentastic.helper,mode=re_search,query=$ESCINFO[Skin.String(SearchHistory.18)])</onclick>
+								<onclick>RunScript(script.fentastic.helper,mode=search_input,query=$ESCINFO[Skin.String(SearchHistory.18)])</onclick>
 								<visible>!String.IsEmpty(Skin.String(SearchHistory.18))</visible>
 							</item>
 							<item>
 								<label>$INFO[Skin.String(SearchHistory.19)]</label>
-								<onclick>RunScript(script.fentastic.helper,mode=re_search,query=$ESCINFO[Skin.String(SearchHistory.19)])</onclick>
+								<onclick>RunScript(script.fentastic.helper,mode=search_input,query=$ESCINFO[Skin.String(SearchHistory.19)])</onclick>
 								<visible>!String.IsEmpty(Skin.String(SearchHistory.19))</visible>
 							</item>
 							<item>
 								<label>$INFO[Skin.String(SearchHistory.20)]</label>
-								<onclick>RunScript(script.fentastic.helper,mode=re_search,query=$ESCINFO[Skin.String(SearchHistory.20)])</onclick>
+								<onclick>RunScript(script.fentastic.helper,mode=search_input,query=$ESCINFO[Skin.String(SearchHistory.20)])</onclick>
 								<visible>!String.IsEmpty(Skin.String(SearchHistory.20))</visible>
 							</item>
 						</content>

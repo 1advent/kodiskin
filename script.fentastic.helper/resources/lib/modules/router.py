@@ -52,7 +52,7 @@ def routing():
     if mode == "search_input":
         from modules.search_utils import SPaths
 
-        return SPaths().search_input()
+        return SPaths().search_input(_get("query"))
 
     if mode == "remove_all_spaths":
         from modules.search_utils import SPaths
