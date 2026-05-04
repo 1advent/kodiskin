@@ -195,7 +195,7 @@
 								<aligny>center</aligny>
 								<font>font32</font>
 								<label>$INFO[ListItem.Label]</label>
-								<textcolor>darkgrey</textcolor>
+								<textcolor>unfocused_text</textcolor>
 								<shadowcolor>text_shadow</shadowcolor>
 							</control>
 						</itemlayout>

@@ -1,3 +1,6 @@
+[v1.1.0]
+- Fixed search history list: item labels were invisible due to undefined 'darkgrey' colour; changed to 'unfocused_text'.
+
 [v1.0.9]
 - Escaped generated search-history XML labels so special characters do not break the history list.
 - Updated search-history publishing reliability in the helper add-on.
