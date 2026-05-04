@@ -110,14 +110,19 @@ class SPaths:
             event.set()
 
     def write_xml(self, xml_file, final_format):
-        with xbmcvfs.File(xml_file, "w") as f:
+        real_path = xbmcvfs.translatePath(xml_file)
+        xbmc.log("[FENtastic] write_xml path: %s" % real_path, xbmc.LOGINFO)
+        xbmc.log("[FENtastic] write_xml content: %s" % final_format[:500], xbmc.LOGINFO)
+        with open(real_path, "w", encoding="utf-8") as f:
             f.write(final_format)
 
     def make_default_xml(self):
         item = default_xmls["search_history"]
         final_format = item[1].format(includes_type=item[2])
         xml_file = "special://skin/xml/%s.xml" % item[0]
-        with xbmcvfs.File(xml_file, "w") as f:
+        real_path = xbmcvfs.translatePath(xml_file)
+        xbmc.log("[FENtastic] make_default_xml path: %s" % real_path, xbmc.LOGINFO)
+        with open(real_path, "w", encoding="utf-8") as f:
             f.write(final_format)
 
     def check_spath_exists(self, spath):
