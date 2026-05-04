@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window type="SearchResults" id="1121">
-	<defaultcontrol>2000</defaultcontrol>
+	<defaultcontrol>700</defaultcontrol>
 	<backgroundcolor>background</backgroundcolor>
 	<controls>
 		<include>DefaultBackground</include>
