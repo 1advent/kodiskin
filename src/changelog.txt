@@ -1,3 +1,7 @@
+[v1.0.7]
+- Restored dynamic recent-search history list behavior on the search results screen.
+- Removed redundant manual left-panel search actions so only real prior searches appear.
+
 [v1.0.6]
 - Fixed search screen focus so top-left search controls are reachable.
 - Added empty-state search actions when recent search history is unavailable.
