@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
-import xbmc, xbmcgui, xbmcvfs
+import xbmc, xbmcgui, xbmcvfs, sys
 import sqlite3 as database
 from modules import xmls
-from urllib.parse import quote
+from urllib.parse import quote, unquote
 from threading import Thread, Event
 from xml.sax.saxutils import escape
 
@@ -185,7 +185,15 @@ class SPaths:
         xbmc.executebuiltin("SetFocus(2000)")
 
     def re_search(self):
-        search_term = xbmc.getInfoLabel("ListItem.Label")
+        search_term = ""
+        for arg in sys.argv:
+            if arg.startswith("query="):
+                search_term = unquote(arg.replace("query=", "", 1))
+                break
+        if not search_term:
+            search_term = xbmc.getInfoLabel("ListItem.Label")
+        if not search_term or not search_term.strip():
+            return
         self.search_input(search_term)
 
     def remake_search_history(self):

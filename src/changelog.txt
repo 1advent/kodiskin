@@ -1,3 +1,7 @@
+[v1.1.2]
+- Switched Recent searches list rendering to Skin.String(SearchHistory.N) slots for compatibility with runtime helper behavior.
+- Added query-argument re-search handling so selecting a history item always re-runs that exact term.
+
 [v1.1.1]
 - Bumped skin version to keep release metadata aligned with the latest helper/repository updates.
 
