@@ -5,8 +5,26 @@ from urllib.parse import parse_qsl
 # from modules.logger import logger
 
 
+def get_params():
+    params = {}
+    for arg in sys.argv[1:]:
+        if not arg:
+            continue
+        raw_arg = arg[1:] if arg.startswith("?") else arg
+        for chunk in raw_arg.split(","):
+            if not chunk:
+                continue
+            if "=" in chunk:
+                key, value = chunk.split("=", 1)
+                params[key] = value
+                continue
+            for key, value in parse_qsl(chunk, keep_blank_values=True):
+                params[key] = value
+    return params
+
+
 def routing():
-    params = dict(parse_qsl(sys.argv[1], keep_blank_values=True))
+    params = get_params()
     _get = params.get
     mode = _get("mode", "check_for_update")
     if mode == "widget_monitor":
