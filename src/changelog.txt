@@ -1,3 +1,6 @@
+[v1.1.7]
+- Fixed helper RunScript argument parsing so `mode` and `query` are parsed correctly from Kodi comma-separated script arguments.
+
 [v1.1.6]
 - Restored original-style recent-search execution flow so selecting a history item updates the search strings first and forces the results container to refresh.
 - Stopped reloading the full skin during re-search operations.

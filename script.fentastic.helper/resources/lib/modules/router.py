@@ -11,15 +11,9 @@ def get_params():
         if not arg:
             continue
         raw_arg = arg[1:] if arg.startswith("?") else arg
-        for chunk in raw_arg.split(","):
-            if not chunk:
-                continue
-            if "=" in chunk:
-                key, value = chunk.split("=", 1)
-                params[key] = value
-                continue
-            for key, value in parse_qsl(chunk, keep_blank_values=True):
-                params[key] = value
+        normalized_arg = raw_arg.replace(",", "&")
+        for key, value in parse_qsl(normalized_arg, keep_blank_values=True):
+            params[key] = value
     return params
 
 
