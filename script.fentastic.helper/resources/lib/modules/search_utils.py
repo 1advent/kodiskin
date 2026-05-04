@@ -92,37 +92,36 @@ class SPaths:
         xbmc.executebuiltin("SetFocus(27400)")
 
     def make_search_history_xml(self, active_spaths, event=None):
-        if not self.refresh_spaths:
-            return
-        if not active_spaths:
-            self.make_default_xml()
-        xml_file = "special://skin/xml/%s.xml" % (search_history_xml)
-        final_format = xmls.media_xml_start.format(main_include="SearchHistory")
-        for _, spath in active_spaths:
-            body = xmls.history_xml_body
-            safe_spath = escape(spath)
-            body = body.format(spath=safe_spath)
-            final_format += body
-        final_format += xmls.media_xml_end
-        self.write_xml(xml_file, final_format)
-        xbmc.executebuiltin("ReloadSkin()")
-        if event is not None:
-            event.set()
+        try:
+            if not self.refresh_spaths:
+                return
+            if not active_spaths:
+                self.make_default_xml()
+                xbmc.executebuiltin("ReloadSkin()")
+                return
+            xml_file = "special://skin/xml/%s.xml" % (search_history_xml)
+            final_format = xmls.media_xml_start.format(main_include="SearchHistory")
+            for _, spath in active_spaths:
+                body = xmls.history_xml_body
+                safe_spath = escape(spath)
+                body = body.format(spath=safe_spath)
+                final_format += body
+            final_format += xmls.media_xml_end
+            self.write_xml(xml_file, final_format)
+            xbmc.executebuiltin("ReloadSkin()")
+        finally:
+            if event is not None:
+                event.set()
 
     def write_xml(self, xml_file, final_format):
-        real_path = xbmcvfs.translatePath(xml_file)
-        xbmc.log("[FENtastic] write_xml path: %s" % real_path, xbmc.LOGINFO)
-        xbmc.log("[FENtastic] write_xml content: %s" % final_format[:500], xbmc.LOGINFO)
-        with open(real_path, "w", encoding="utf-8") as f:
+        with xbmcvfs.File(xml_file, "w") as f:
             f.write(final_format)
 
     def make_default_xml(self):
         item = default_xmls["search_history"]
         final_format = item[1].format(includes_type=item[2])
         xml_file = "special://skin/xml/%s.xml" % item[0]
-        real_path = xbmcvfs.translatePath(xml_file)
-        xbmc.log("[FENtastic] make_default_xml path: %s" % real_path, xbmc.LOGINFO)
-        with open(real_path, "w", encoding="utf-8") as f:
+        with xbmcvfs.File(xml_file, "w") as f:
             f.write(final_format)
 
     def check_spath_exists(self, spath):

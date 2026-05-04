@@ -1,3 +1,6 @@
+[v1.1.1]
+- Bumped skin version to keep release metadata aligned with the latest helper/repository updates.
+
 [v1.1.0]
 - Fixed search history list: item labels were invisible due to undefined 'darkgrey' colour; changed to 'unfocused_text'.
 
