@@ -214,12 +214,15 @@ class SPaths:
         xbmc.executebuiltin(f"Skin.SetString(SearchInput,{search_term})")
         xbmc.executebuiltin("SetFocus(2000)")
 
-    def re_search(self):
-        search_term = ""
-        for arg in sys.argv:
-            if arg.startswith("query="):
-                search_term = unquote(arg.replace("query=", "", 1))
-                break
+    def re_search(self, search_term=None):
+        if search_term:
+            search_term = unquote(search_term)
+        else:
+            search_term = ""
+            for arg in sys.argv:
+                if arg.startswith("query="):
+                    search_term = unquote(arg.replace("query=", "", 1))
+                    break
         if not search_term:
             search_term = xbmc.getInfoLabel("ListItem.Label")
         if not search_term or not search_term.strip():

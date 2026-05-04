@@ -80,7 +80,7 @@ def routing():
     if mode == "re_search":
         from modules.search_utils import SPaths
 
-        return SPaths().re_search()
+        return SPaths().re_search(_get("query"))
 
     if mode == "open_search_window":
         from modules.search_utils import SPaths

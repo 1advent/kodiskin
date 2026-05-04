@@ -1,3 +1,6 @@
+[v1.1.5]
+- Fixed Recent searches re-run behavior by passing the parsed clicked query directly into the helper re_search handler.
+
 [v1.1.4]
 - Fixed Recent searches click handling to re-run the selected stored search term instead of falling back to the new-search prompt.
 - Improved helper RunScript argument parsing for Kodi's comma-separated invocation format.
