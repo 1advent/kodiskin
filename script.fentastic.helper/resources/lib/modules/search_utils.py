@@ -197,6 +197,7 @@ class SPaths:
         xbmc.log(f"[FEN HELPER] search_input() executing search for: {search_term}", xbmc.LOGINFO)
         encoded_search_term = quote(search_term)
         xbmc.executebuiltin("Skin.Reset(DatabaseStatus)")
+        xbmc.executebuiltin("Skin.SetString(current_search_provider,1)")
         xbmc.executebuiltin(f"Skin.SetString(SearchInput,{search_term})")
         xbmc.executebuiltin(f"Skin.SetString(SearchInputEncoded,{encoded_search_term})")
         xbmc.executebuiltin(
