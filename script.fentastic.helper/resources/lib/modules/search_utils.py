@@ -196,13 +196,18 @@ class SPaths:
         search_term = search_term.strip()
         xbmc.log(f"[FEN HELPER] search_input() executing search for: {search_term}", xbmc.LOGINFO)
         encoded_search_term = quote(search_term)
+        xbmc.log(f"[FEN HELPER] search_input() encoded_search_term: {encoded_search_term}", xbmc.LOGINFO)
         xbmc.executebuiltin("Skin.Reset(DatabaseStatus)")
         xbmc.executebuiltin("Skin.SetString(current_search_provider,1)")
+        xbmc.log(f"[FEN HELPER] Skin.SetString(current_search_provider,1)", xbmc.LOGINFO)
         xbmc.executebuiltin(f"Skin.SetString(SearchInput,{search_term})")
+        xbmc.log(f"[FEN HELPER] Skin.SetString(SearchInput,{search_term})", xbmc.LOGINFO)
         xbmc.executebuiltin(f"Skin.SetString(SearchInputEncoded,{encoded_search_term})")
+        xbmc.log(f"[FEN HELPER] Skin.SetString(SearchInputEncoded,{encoded_search_term})", xbmc.LOGINFO)
         xbmc.executebuiltin(
             f"Skin.SetString(SearchInputTraktEncoded,{encoded_search_term})"
         )
+        xbmc.log(f"[FEN HELPER] Skin.SetString(SearchInputTraktEncoded,{encoded_search_term})", xbmc.LOGINFO)
         if xbmcgui.getCurrentWindowId() != WINDOW_SEARCH_RESULTS:
             xbmc.log(f"[FEN HELPER] search_input() not in search results window, activating", xbmc.LOGINFO)
             xbmc.executebuiltin(f"ActivateWindow({WINDOW_SEARCH_RESULTS})")
@@ -215,10 +220,13 @@ class SPaths:
         self.apply_search_history_to_skin(rows)
         self.refresh_spaths = True
         self.make_search_history_xml(rows)
+        xbmc.log(f"[FEN HELPER] search_input() calling SetProperty(fentastic.results,1,1121)", xbmc.LOGINFO)
         xbmc.executebuiltin("SetProperty(fentastic.results,1,1121)")
+        xbmc.log(f"[FEN HELPER] search_input() calling Container(27001).Update()", xbmc.LOGINFO)
         xbmc.executebuiltin("Container(27001).Update()")
+        xbmc.log(f"[FEN HELPER] search_input() calling SetFocus(2000)", xbmc.LOGINFO)
         xbmc.executebuiltin("SetFocus(2000)")
-        xbmc.log(f"[FEN HELPER] search_input() completed for: {search_term}", xbmc.LOGINFO)
+        xbmc.log(f"[FEN HELPER] search_input() COMPLETED successfully for: {search_term}", xbmc.LOGINFO)
 
     def re_search(self, search_term=None):
         xbmc.log(f"[FEN HELPER] re_search() called with search_term={search_term}", xbmc.LOGINFO)

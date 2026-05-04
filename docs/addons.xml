@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
-  <addon id="script.fentastic.helper" name="FENtastic Helper" version="1.0.9" provider-name="Tikipeter, Ivar Brandt, Oneadvent">
+  <addon id="script.fentastic.helper" name="FENtastic Helper" version="1.0.10" provider-name="Tikipeter, Ivar Brandt, Oneadvent">
       <requires>
           <import addon="xbmc.python" version="3.0.0"/>
           <import addon="script.module.requests" version="2.19.1"/>
