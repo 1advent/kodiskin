@@ -6,21 +6,28 @@ from urllib.parse import parse_qsl
 
 
 def get_params():
+    import xbmc
     params = {}
+    xbmc.log(f"[FEN HELPER] router.get_params() called with sys.argv: {sys.argv}", xbmc.LOGINFO)
     for arg in sys.argv[1:]:
         if not arg:
             continue
         raw_arg = arg[1:] if arg.startswith("?") else arg
         normalized_arg = raw_arg.replace(",", "&")
+        xbmc.log(f"[FEN HELPER] Processing arg: {arg} -> normalized: {normalized_arg}", xbmc.LOGINFO)
         for key, value in parse_qsl(normalized_arg, keep_blank_values=True):
             params[key] = value
+            xbmc.log(f"[FEN HELPER] Parsed param: {key}={value}", xbmc.LOGINFO)
+    xbmc.log(f"[FEN HELPER] Final params dict: {params}", xbmc.LOGINFO)
     return params
 
 
 def routing():
+    import xbmc
     params = get_params()
     _get = params.get
     mode = _get("mode", "check_for_update")
+    xbmc.log(f"[FEN HELPER] routing() detected mode: {mode}", xbmc.LOGINFO)
     if mode == "widget_monitor":
         from modules.widget_utils import widget_monitor
 

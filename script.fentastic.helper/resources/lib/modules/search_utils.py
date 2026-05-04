@@ -174,12 +174,15 @@ class SPaths:
             xbmc.executebuiltin("SetFocus(27400)")
 
     def search_input(self, search_term=None):
+        xbmc.log(f"[FEN HELPER] search_input() called with search_term={search_term}", xbmc.LOGINFO)
         if search_term is None:
             for arg in sys.argv:
                 if arg.startswith("query="):
                     search_term = unquote(arg.replace("query=", "", 1))
+                    xbmc.log(f"[FEN HELPER] search_input() found query in sys.argv: {search_term}", xbmc.LOGINFO)
                     break
         if search_term is None or not search_term.strip():
+            xbmc.log(f"[FEN HELPER] search_input() search_term empty, showing keyboard", xbmc.LOGINFO)
             prompt = "Search" if xbmcgui.getCurrentWindowId() == WINDOW_HOME else "New Search"
             keyboard = xbmc.Keyboard("", prompt, False)
             keyboard.doModal()
@@ -191,6 +194,7 @@ class SPaths:
             else:
                 return
         search_term = search_term.strip()
+        xbmc.log(f"[FEN HELPER] search_input() executing search for: {search_term}", xbmc.LOGINFO)
         encoded_search_term = quote(search_term)
         xbmc.executebuiltin("Skin.Reset(DatabaseStatus)")
         xbmc.executebuiltin(f"Skin.SetString(SearchInput,{search_term})")
@@ -199,6 +203,7 @@ class SPaths:
             f"Skin.SetString(SearchInputTraktEncoded,{encoded_search_term})"
         )
         if xbmcgui.getCurrentWindowId() != WINDOW_SEARCH_RESULTS:
+            xbmc.log(f"[FEN HELPER] search_input() not in search results window, activating", xbmc.LOGINFO)
             xbmc.executebuiltin(f"ActivateWindow({WINDOW_SEARCH_RESULTS})")
             xbmc.sleep(150)
         existing_spath = self.check_spath_exists(search_term)
@@ -212,20 +217,27 @@ class SPaths:
         xbmc.executebuiltin("SetProperty(fentastic.results,1,1121)")
         xbmc.executebuiltin("Container(27001).Update()")
         xbmc.executebuiltin("SetFocus(2000)")
+        xbmc.log(f"[FEN HELPER] search_input() completed for: {search_term}", xbmc.LOGINFO)
 
     def re_search(self, search_term=None):
+        xbmc.log(f"[FEN HELPER] re_search() called with search_term={search_term}", xbmc.LOGINFO)
         if search_term:
             search_term = unquote(search_term)
+            xbmc.log(f"[FEN HELPER] re_search() unquoted search_term: {search_term}", xbmc.LOGINFO)
         else:
             search_term = ""
             for arg in sys.argv:
                 if arg.startswith("query="):
                     search_term = unquote(arg.replace("query=", "", 1))
+                    xbmc.log(f"[FEN HELPER] re_search() found query in sys.argv: {search_term}", xbmc.LOGINFO)
                     break
         if not search_term:
             search_term = xbmc.getInfoLabel("ListItem.Label")
+            xbmc.log(f"[FEN HELPER] re_search() fallback to ListItem.Label: {search_term}", xbmc.LOGINFO)
         if not search_term or not search_term.strip():
+            xbmc.log(f"[FEN HELPER] re_search() search_term empty, returning without search", xbmc.LOGINFO)
             return
+        xbmc.log(f"[FEN HELPER] re_search() calling search_input with: {search_term}", xbmc.LOGINFO)
         self.search_input(search_term)
 
     def remake_search_history(self):
