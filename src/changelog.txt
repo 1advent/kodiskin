@@ -1,3 +1,7 @@
+[v1.0.8]
+- Fixed search history labels to render actual past search terms.
+- Restored re-search behavior for visible history entries.
+
 [v1.0.7]
 - Restored dynamic recent-search history list behavior on the search results screen.
 - Removed redundant manual left-panel search actions so only real prior searches appear.
