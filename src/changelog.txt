@@ -1,3 +1,7 @@
+[v1.0.9]
+- Escaped generated search-history XML labels so special characters do not break the history list.
+- Updated search-history publishing reliability in the helper add-on.
+
 [v1.0.8]
 - Fixed search history labels to render actual past search terms.
 - Restored re-search behavior for visible history entries.

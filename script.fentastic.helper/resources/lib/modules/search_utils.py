@@ -5,6 +5,7 @@ import sqlite3 as database
 from modules import xmls
 from urllib.parse import quote
 from threading import Thread, Event
+from xml.sax.saxutils import escape
 
 # from modules.logger import logger
 
@@ -99,7 +100,8 @@ class SPaths:
         final_format = xmls.media_xml_start.format(main_include="SearchHistory")
         for _, spath in active_spaths:
             body = xmls.history_xml_body
-            body = body.format(spath=spath)
+            safe_spath = escape(spath)
+            body = body.format(spath=safe_spath)
             final_format += body
         final_format += xmls.media_xml_end
         self.write_xml(xml_file, final_format)
