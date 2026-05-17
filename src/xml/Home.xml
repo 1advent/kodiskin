@@ -87,21 +87,21 @@
 						<include>WidgetGroupListCommon</include>
 						<pagecontrol>19099</pagecontrol>
 						<include content="WidgetListBigPoster">
-							<param name="content_path" value="plugin://plugin.video.gear/?mode=build_movie_list&amp;action=in_progress_movies"/>
+							<param name="content_path" value="plugin://plugin.video.gears/?mode=build_movie_list&amp;action=in_progress_movies"/>
 							<param name="widget_header" value="In Progress"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="19110"/>
 							<param name="limit" value="20"/>
 						</include>
 						<include content="WidgetListBigPoster">
-							<param name="content_path" value="plugin://plugin.video.gear/?mode=build_movie_list&amp;action=recent_watched_movies"/>
+							<param name="content_path" value="plugin://plugin.video.gears/?mode=build_movie_list&amp;action=recent_watched_movies"/>
 							<param name="widget_header" value="Recently Watched"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="19120"/>
 							<param name="limit" value="20"/>
 						</include>
 						<include content="WidgetListBigPoster">
-							<param name="content_path" value="plugin://plugin.video.gear/?mode=random.build_movie_list&amp;action=because_you_watched"/>
+							<param name="content_path" value="plugin://plugin.video.gears/?mode=random.build_movie_list&amp;action=because_you_watched"/>
 							<param name="widget_header" value="Because You Watched"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="19130"/>
@@ -122,7 +122,7 @@
 						<include>WidgetGroupListCommon</include>
 						<pagecontrol>22099</pagecontrol>
 						<include content="WidgetListBigPoster">
-							<param name="content_path" value="plugin://plugin.video.gear/?mode=build_tvshow_list&amp;action=in_progress_tvshows"/>
+							<param name="content_path" value="plugin://plugin.video.gears/?mode=build_tvshow_list&amp;action=in_progress_tvshows"/>
 							<param name="widget_header" value="In Progress"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="22110"/>
@@ -131,14 +131,14 @@
 							<param name="limit" value="20"/>
 						</include>
 						<include content="WidgetListBigPoster">
-							<param name="content_path" value="plugin://plugin.video.gear/?mode=build_tvshow_list&amp;action=recent_watched_tvshows"/>
+							<param name="content_path" value="plugin://plugin.video.gears/?mode=build_tvshow_list&amp;action=recent_watched_tvshows"/>
 							<param name="widget_header" value="Recently Watched"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="22120"/>
 							<param name="limit" value="20"/>
 						</include>
 						<include content="WidgetListBigPoster">
-							<param name="content_path" value="plugin://plugin.video.gear/?mode=random.build_tvshow_list&amp;action=because_you_watched"/>
+							<param name="content_path" value="plugin://plugin.video.gears/?mode=random.build_tvshow_list&amp;action=because_you_watched"/>
 							<param name="widget_header" value="Because You Watched"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="22130"/>
@@ -945,16 +945,16 @@
 						<content>
 							<item>
 								<label>$LOCALIZE[342]</label>
-								<onclick condition="System.HasAddon(plugin.video.gear)">ActivateWindow(Videos,&quot;plugin://plugin.video.gear/?mode=navigator.main&amp;action=MovieList" ,return)</onclick>
-								<onclick condition="!System.HasAddon(plugin.video.gear)">ActivateWindow(1100)</onclick>
+								<onclick condition="System.HasAddon(plugin.video.gears)">ActivateWindow(Videos,&quot;plugin://plugin.video.gears/?mode=navigator.main&amp;action=MovieList" ,return)</onclick>
+								<onclick condition="!System.HasAddon(plugin.video.gears)">ActivateWindow(1100)</onclick>
 								<property name="menu_id">$NUMBER[19000]</property>
 								<thumb>icons/sidemenu/movies.png</thumb>
 								<property name="id">movies</property>
 							</item>
 							<item>
 								<label>$LOCALIZE[20343]</label>
-								<onclick condition="System.HasAddon(plugin.video.gear)">ActivateWindow(Videos,&quot;plugin://plugin.video.gear/?mode=navigator.main&amp;action=TVShowList&quot;,return)</onclick>
-								<onclick condition="!System.HasAddon(plugin.video.gear)">ActivateWindow(1100)</onclick>
+								<onclick condition="System.HasAddon(plugin.video.gears)">ActivateWindow(Videos,&quot;plugin://plugin.video.gears/?mode=navigator.main&amp;action=TVShowList&quot;,return)</onclick>
+								<onclick condition="!System.HasAddon(plugin.video.gears)">ActivateWindow(1100)</onclick>
 								<property name="menu_id">$NUMBER[22000]</property>
 								<thumb>icons/sidemenu/tvshows.png</thumb>
 								<property name="id">tvshows</property>

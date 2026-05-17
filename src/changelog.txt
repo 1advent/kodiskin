@@ -1,3 +1,6 @@
+[v1.2.2]
+- Fixed Gear integration calls to use the correct addon id (`plugin.video.gears`), restoring home widgets and search results loading.
+
 [v1.2.1]
 - Removed Gear addon gating from the home widget includes so the widgets always render.
 
