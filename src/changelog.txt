@@ -1,3 +1,6 @@
+[v1.2.3]
+- Bumped skin version together with repository release to keep update metadata in sync.
+
 [v1.2.2]
 - Fixed Gear integration calls to use the correct addon id (`plugin.video.gears`), restoring home widgets and search results loading.
 
