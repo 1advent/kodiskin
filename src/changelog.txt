@@ -1,3 +1,6 @@
+[v1.1.9]
+- Bumped the skin version after switching the skin's search and widget routing over to Gear.
+
 [v1.1.8]
 - Switched the skin's FENlight/FEN integration over to the Gear addon for search and widget navigation.
 
