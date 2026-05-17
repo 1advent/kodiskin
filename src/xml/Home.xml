@@ -86,21 +86,21 @@
 					<control type="grouplist" id="19001">
 						<include>WidgetGroupListCommon</include>
 						<pagecontrol>19099</pagecontrol>
-						<include content="WidgetListBigPoster" condition="System.HasAddon(plugin.video.gear)">
+						<include content="WidgetListBigPoster">
 							<param name="content_path" value="plugin://plugin.video.gear/?mode=build_movie_list&amp;action=in_progress_movies"/>
 							<param name="widget_header" value="In Progress"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="19110"/>
 							<param name="limit" value="20"/>
 						</include>
-						<include content="WidgetListBigPoster" condition="System.HasAddon(plugin.video.gear)">
+						<include content="WidgetListBigPoster">
 							<param name="content_path" value="plugin://plugin.video.gear/?mode=build_movie_list&amp;action=recent_watched_movies"/>
 							<param name="widget_header" value="Recently Watched"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="19120"/>
 							<param name="limit" value="20"/>
 						</include>
-						<include content="WidgetListBigPoster" condition="System.HasAddon(plugin.video.gear)">
+						<include content="WidgetListBigPoster">
 							<param name="content_path" value="plugin://plugin.video.gear/?mode=random.build_movie_list&amp;action=because_you_watched"/>
 							<param name="widget_header" value="Because You Watched"/>
 							<param name="widget_target" value="videos"/>
@@ -121,7 +121,7 @@
 					<control type="grouplist" id="22001">
 						<include>WidgetGroupListCommon</include>
 						<pagecontrol>22099</pagecontrol>
-						<include content="WidgetListBigPoster" condition="System.HasAddon(plugin.video.gear)">
+						<include content="WidgetListBigPoster">
 							<param name="content_path" value="plugin://plugin.video.gear/?mode=build_tvshow_list&amp;action=in_progress_tvshows"/>
 							<param name="widget_header" value="In Progress"/>
 							<param name="widget_target" value="videos"/>
@@ -130,14 +130,14 @@
 							<param name="sortorder" value="descending"/>
 							<param name="limit" value="20"/>
 						</include>
-						<include content="WidgetListBigPoster" condition="System.HasAddon(plugin.video.gear)">
+						<include content="WidgetListBigPoster">
 							<param name="content_path" value="plugin://plugin.video.gear/?mode=build_tvshow_list&amp;action=recent_watched_tvshows"/>
 							<param name="widget_header" value="Recently Watched"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="22120"/>
 							<param name="limit" value="20"/>
 						</include>
-						<include content="WidgetListBigPoster" condition="System.HasAddon(plugin.video.gear)">
+						<include content="WidgetListBigPoster">
 							<param name="content_path" value="plugin://plugin.video.gear/?mode=random.build_tvshow_list&amp;action=because_you_watched"/>
 							<param name="widget_header" value="Because You Watched"/>
 							<param name="widget_target" value="videos"/>
