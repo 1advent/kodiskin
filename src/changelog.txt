@@ -1,3 +1,6 @@
+[v1.2.6]
+- Fixed empty-history dialog persisting after a search by replacing static include condition with a dynamic visible group.
+
 [v1.2.5]
 - Added Clear History button to the search screen icon bar.
 
