@@ -1,3 +1,6 @@
+[v1.2.4]
+- Fixed New Search button calling re_search (which silently exits with no history) instead of search_input (which opens the keyboard).
+
 [v1.2.3]
 - Bumped skin version together with repository release to keep update metadata in sync.
 
