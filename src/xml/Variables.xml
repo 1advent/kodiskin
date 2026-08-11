@@ -482,6 +482,14 @@
 		<value condition="ListItem.HasArchive">windows/pvr/archive.png</value>
 		<value condition="Integer.IsGreater(ListItem.Playcount,0)">OverlayWatched.png</value>
 	</variable>
+	<variable name="WatchedProgressValueVar">
+		<value condition="!String.IsEmpty(ListItem.Property(WatchedProgress)) + !Integer.IsEqual(ListItem.Property(WatchedProgress),0)">$INFO[ListItem.Property(WatchedProgress)]</value>
+		<value condition="!Integer.IsEqual(ListItem.PercentPlayed,0)">$INFO[ListItem.PercentPlayed]</value>
+	</variable>
+	<variable name="WatchedProgressVisibleVar">
+		<value condition="!String.IsEmpty(ListItem.Property(WatchedProgress)) + !Integer.IsEqual(ListItem.Property(WatchedProgress),0)">!String.IsEmpty(ListItem.Property(WatchedProgress)) + !Integer.IsEqual(ListItem.Property(WatchedProgress),0)</value>
+		<value condition="!Integer.IsEqual(ListItem.PercentPlayed,0)">!Integer.IsEqual(ListItem.PercentPlayed,0)</value>
+	</variable>
 	<variable name="ListPVRRecordingsIconVar">
 		<value condition="ListItem.IsRecording">windows/pvr/record.png</value>
 		<value condition="ListItem.IsResumable">overlays/watched/resume.png</value>
