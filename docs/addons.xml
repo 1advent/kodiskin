@@ -1,31 +1,53 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
-  <addon id="script.fentastic.helper" name="FENtastic Helper" version="1.0.11" provider-name="Tikipeter, Ivar Brandt, Oneadvent">
-      <requires>
-          <import addon="xbmc.python" version="3.0.0"/>
-          <import addon="script.module.requests" version="2.19.1"/>
-      </requires>
-      <extension point="xbmc.python.library" library="resources/lib/default.py"/>
-      <extension point="xbmc.service" library="resources/lib/service.py" start="startup" />
-      <extension point="xbmc.addon.metadata">
-          <news />
-          <platform>all</platform>
-          <license>GPL-2.0-only</license>
-          <forum />
-          <source>https://github.com/1advent/kodiskin</source>
-          <assets>
-              <icon>resources/media/icon.png</icon>
-              <fanart>resources/media/fanart.jpg</fanart>
-          </assets>
-          <summary lang="en_GB">FENtastic Helper for Kodi</summary>
-          <summary lang="en_NZ">FENtastic Helper for Kodi</summary>
-          <summary lang="en_US">FENtastic Helper for Kodi</summary>
-          <description lang="en_GB">FENtastic Helper for FENtastic-based skins, bundled for Fentastic Oneadvent Skin and based on the original helper by Tikipeter and Ivar Brandt.</description>
-          <description lang="en_NZ">FENtastic Helper for FENtastic-based skins, bundled for Fentastic Oneadvent Skin and based on the original helper by Tikipeter and Ivar Brandt.</description>
-          <description lang="en_US">FENtastic Helper for FENtastic-based skins, bundled for Fentastic Oneadvent Skin and based on the original helper by Tikipeter and Ivar Brandt.</description>
-      </extension>
+  <addon id="repository.oneadvent" version="1.0.0" name="Oneadvent Repository"
+  	provider-name="Oneadvent">
+  	<extension point="xbmc.addon.repository" name="Oneadvent Repository">
+  		<info compressed="false">https://YOUR_GITHUB_USERNAME.github.io/oneadventskin/addons.xml</info>
+  		<checksum>https://YOUR_GITHUB_USERNAME.github.io/oneadventskin/addons.xml.md5</checksum>
+  		<datadir zip="true">https://YOUR_GITHUB_USERNAME.github.io/oneadventskin/zips/</datadir>
+  	</extension>
+  	<extension point="xbmc.addon.metadata">
+  		<summary lang="en_GB">Oneadvent Kodi repository</summary>
+  		<summary lang="en_US">Oneadvent Kodi repository</summary>
+  		<summary lang="en_NZ">Oneadvent Kodi repository</summary>
+  		<description lang="en_GB">Repository for Fentastic Oneadvent Skin.</description>
+  		<description lang="en_US">Repository for Fentastic Oneadvent Skin.</description>
+  		<description lang="en_NZ">Repository for Fentastic Oneadvent Skin.</description>
+  		<platform>all</platform>
+  		<assets>
+  			<icon>icon.png</icon>
+  			<fanart>fanart.jpg</fanart>
+  		</assets>
+  	</extension>
   </addon>
-  <addon id="skin.fentastic.oneadvent" version="1.2.7" name="Fentastic Oneadvent Skin"
+	<addon id="plugin.video.gears" version="2.1.2" name="The Gears" provider-name="chains">
+		<requires>
+			<import addon="xbmc.python" version="3.0.0" />
+			<import addon="script.module.pil" version="1.1.7" />
+			<import addon="script.module.requests" version="2.19.1" />
+			<import addon="script.module.gearsscrapers" version="1.0.0" />
+		</requires>
+		<extension point="xbmc.python.pluginsource" library="resources/lib/gears.py">
+			<provides>video</provides>
+		</extension>
+		<extension point="xbmc.service" library="resources/lib/service.py" />
+		<extension point="xbmc.python.module" library="resources/lib/" />
+		<extension point="xbmc.addon.metadata">
+			<reuselanguageinvoker>true</reuselanguageinvoker>
+			<summary lang="en">Access your Derid Content.</summary>
+			<description lang="en">This is a Non-profit resource, organized solely for educational purposes which is protected under the Fair-Use doctrine of the Copyright Act, Specifically section 107, which does promote freedom of expression, by permitting the unlicensed use of copyright-protected works.</description>
+			<platform>all</platform>
+			<disclaimer lang="en">The author of this addon does not host any of the content which is found and has no affiliation with any of the content providers.</disclaimer>
+			<license />
+			<assets>
+				<icon>icon.png</icon>
+				<fanart>fanart.jpg</fanart>
+			</assets>
+			<news>INFO: For latest changes see Changelog within Tools of add-on.</news>
+		</extension>
+	</addon>
+  <addon id="skin.fentastic.oneadvent" version="1.0.1" name="Fentastic Oneadvent Skin"
   	provider-name="Oneadvent">
   	<requires>
   		<import addon="xbmc.gui" version="5.17.0" />
@@ -45,7 +67,7 @@
   		<platform>all</platform>
   		<license>CC BY-SA 4.0, GNU GENERAL PUBLIC LICENSE Version 2.0</license>
   		<forum>http://forum.kodi.tv/</forum>
-  		<source>https://github.com/1advent/kodiskin</source>
+  		<source>https://github.com/YOUR_GITHUB_USERNAME/oneadventskin</source>
   		<assets>
   			<icon>resources/icon.png</icon>
   			<fanart>resources/fanart.jpg</fanart>
@@ -56,9 +78,9 @@
   		<summary lang="en_GB">Fentastic Oneadvent Skin for Kodi</summary>
   		<summary lang="en_NZ">Fentastic Oneadvent Skin for Kodi</summary>
   		<summary lang="en_US">Fentastic Oneadvent Skin for Kodi</summary>
-  		<description lang="en_GB">Fentastic Oneadvent Skin is a FenLight-focused Kodi Omega skin with a simplified Oneadvent home layout, green-themed styling, and custom widgets, based on FENtastic by Ivar Brandt.</description>
-  		<description lang="en_NZ">Fentastic Oneadvent Skin is a FenLight-focused Kodi Omega skin with a simplified Oneadvent home layout, green-themed styling, and custom widgets, based on FENtastic by Ivar Brandt.</description>
-  		<description lang="en_US">Fentastic Oneadvent Skin is a FenLight-focused Kodi Omega skin with a simplified Oneadvent home layout, green-themed styling, and custom widgets, based on FENtastic by Ivar Brandt.</description>
+  		<description lang="en_GB">Fentastic Oneadvent Skin is a FenLight-focused Kodi Omega skin with a simplified Oneadvent home layout, green-themed styling, and custom widgets.</description>
+  		<description lang="en_NZ">Fentastic Oneadvent Skin is a FenLight-focused Kodi Omega skin with a simplified Oneadvent home layout, green-themed styling, and custom widgets.</description>
+  		<description lang="en_US">Fentastic Oneadvent Skin is a FenLight-focused Kodi Omega skin with a simplified Oneadvent home layout, green-themed styling, and custom widgets.</description>
   	</extension>
   </addon>
 </addons>
